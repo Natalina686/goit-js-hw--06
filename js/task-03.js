@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const gallery = document.querySelector(".gallery");
+// доступ
+const galleryItem = ({ url, alt }) =>
+  `<li><img src = "${url}" alt = "${alt}"></li>`;
+  // створюємо лішки з посиланням і назвою
+const galleryMarkup = images.reduce(
+  (acc, item) => acc + galleryItem(item),
+  ""
+);
+
+gallery.insertAdjacentHTML("beforeend", galleryMarkup);
